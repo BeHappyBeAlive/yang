@@ -1,4 +1,4 @@
-##Synchronizzed和static Synchronizzed作用区别
+## Synchronizzed和static Synchronizzed作用区别
 ## Synchronized
 一个对象里面如果有多个synchronized方法，某一时刻内，只要一个县城去调用其中的一个synchronized方法，就锁定当前这个对象，其余线程只能等待该线程用完这个对象之后才能使用该对象
 即synchronized锁定的是当前这个对象，即this，一旦this被锁定，其他线程都不能进入到该对象的其他被synchronized方法
