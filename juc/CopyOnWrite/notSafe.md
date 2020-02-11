@@ -1,4 +1,4 @@
-##java.util.ConcurrentModificationException异常。
+## java.util.ConcurrentModificationException异常。
 
 
 
@@ -15,17 +15,17 @@
 	`
 
 		public static void listNotSafe(){
-        //List<String> list = new ArrayList<>();  线程不安全
-        //List<String> list=new Vector<>();  //线程安全
-        //List<String> list= Collections.synchronizedList(new ArrayList<>());
-        List<String> list= new CopyOnWriteArrayList<>();
-        for (int i = 0; i <= 3; i++) {
-            new Thread(()->{
-                list.add(UUID.randomUUID().toString().substring(0,8));
-                System.out.println(list);
-            },String.valueOf(i)).start();
-        }
-    	}
+		//List<String> list = new ArrayList<>();  线程不安全
+		//List<String> list=new Vector<>();  //线程安全
+		//List<String> list= Collections.synchronizedList(new ArrayList<>());
+		List<String> list= new CopyOnWriteArrayList<>();
+		for (int i = 0; i <= 3; i++) {
+		    new Thread(()->{
+			list.add(UUID.randomUUID().toString().substring(0,8));
+			System.out.println(list);
+		    },String.valueOf(i)).start();
+		}
+		}
 
 	`
 
@@ -33,7 +33,7 @@
 
 
 
-###解决办法
+### 解决办法
 
 * 使用Vector<>() 实现List接口
 * 使用Collections.synchronizedList(new ArrayList<>()) 实现List接口
@@ -49,7 +49,7 @@
 
 
 
-##volatile
+## volatile
 
 ### 内存模型的相关概念
 
@@ -209,7 +209,7 @@
 　　另外，Java内存模型具备一些先天的“有序性”，即不需要通过任何手段就能够得到保证的有序性，这个通常也称为 happens-before 原则。如果两个操作的执行次序无法从happens-before原则推导出来，那么它们就不能保证它们的有序性，虚拟机可以随意地对它们进行重排序。
 
 
-###深入剖析volatile关键字
+### 深入剖析volatile关键字
 
 - volatile关键字的两层语义
 
